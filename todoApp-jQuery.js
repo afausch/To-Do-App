@@ -3,23 +3,12 @@ $(document).ready(function(){
     var listItems = ["Get groceries", "Pay bills", "Do laundry", "Wash car"];
 
     function renderAll() {
-        $('ol').html('');
+        var $list = $('ol.list');
+        $list.html('');
         
         for (var i = 0; i < listItems.length; i++) {
-            $("ol").append("<li>" + listItems[i] + "</li>");
-        }
-        
-        $("li").click(listItemClick);
-    }
-
-    function listItemClick(clickEvent) {
-      var listItem = clickEvent.target;
-      var textDecoration = listItem.style.textDecoration;
-       if(textDecoration === "line-through") {
-        listItem.style.textDecoration = "";
-     } else {
-       listItem.style.textDecoration = "line-through";
-     }
+            $list.append('<input type="checkbox" name="task" value="'+ listItems[i] + '">' + listItems[i] + '<br>');
+        } 
     }
 
     $("form").submit(function(event) {
