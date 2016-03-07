@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+    function loadDoc() {
+          $("#demo").load("ajax.txt");  
+        }
+    
+    $('#loadDocButton').click(loadDoc);
+    
     var listItems = ["Get groceries", "Pay bills", "Do laundry", "Wash car"];
 
     function renderAll() {
@@ -24,4 +30,5 @@ $(document).ready(function(){
     });
     
     renderAll();
+
 });
